@@ -24,7 +24,7 @@ def INSERT(game):
 #     return df
 
 def SELECT_BY_ID(game_id):
-    db.cursor.execute(f"SELECT * FROM DB_STEAM WHERE GameID = ?", {game_id})
+    db.cursor.execute("SELECT * FROM DB_STEAM WHERE GameID = ?", (game_id))
     row = db.cursor.fetchone()  # Pega apenas um resultado
 
     if row:

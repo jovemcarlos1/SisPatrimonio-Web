@@ -5,7 +5,7 @@ import pandas as pd
 
 
 st.set_page_config(
-    page_title="projectCRUD",
+    page_title="SisPatrimonio",
     page_icon="favicon.ico",
     layout="centered",
     initial_sidebar_state="auto",
@@ -14,7 +14,7 @@ st.set_page_config(
 
 
 st.sidebar.title('Menu')
-MainPage = st.sidebar.selectbox('Selecionar função:', ['Adicionar', 'Consultar', 'Alterar', 'Deletar'])
+MainPage = st.sidebar.selectbox('Selecionar função:', ['Consultar', 'Adicionar', 'Alterar', 'Deletar'])
 
 if MainPage == 'Adicionar':
 
