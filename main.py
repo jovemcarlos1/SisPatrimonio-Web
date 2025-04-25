@@ -12,6 +12,17 @@ st.set_page_config(
     menu_items=None
 )
 
+def get_version():
+    with open("version.txt", "r") as f:
+        return f.read().strip()
+
+title, version = st.columns([5,1])
+
+with title:
+        st.title('SisPatrimônio Web')
+
+with version:
+        st.markdown(f"###### Version`{get_version()}`")        
 
 st.sidebar.title('Menu')
 MainPage = st.sidebar.selectbox('Selecionar função:', ['Consultar', 'Adicionar', 'Alterar', 'Deletar'])
@@ -36,6 +47,7 @@ if MainPage == 'Adicionar':
                 st.success(f'Cadastro realizado!')    
 
 if MainPage == 'Consultar':
+        
         st.title('Consultar')
         with st.form(key='search_game'):
                 input_gameid = st.text_input(label='ID:')
