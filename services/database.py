@@ -1,7 +1,7 @@
 import pyodbc
 
-SERVER = 'PT002080'
-DATABASE = 'TESTE'
+SERVER = 'CARLOS'
+DATABASE = 'DB_TESTE'
 USERNAME = 'sa'
 PASSWORD = 'root2025'
 

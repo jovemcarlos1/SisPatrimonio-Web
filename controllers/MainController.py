@@ -4,11 +4,12 @@ import pandas as pd;
 
 def INSERT(game):
     db.cursor.execute("""
-    INSERT INTO DB_Steam(GameName, GameCategory, GamePrice, ReleaseDate)
+    INSERT INTO Steam(GameName, GameCategory, GamePrice, GameReleaseDate)
     VALUES(?,?,?,?)""",
-    game.name, game.category, game.price, game.releasedate).rowcount
+    game.gamename, game.category, game.price, game.releasedate)
     db.conn.commit()
-    db.cursor.close()
+    db.conn.close()
+    
     
     
 # def SELECT(game):
@@ -23,11 +24,12 @@ def INSERT(game):
 #     db.conn.close()
 #     return df
 
-def SELECT_BY_ID(game_id):
-    db.cursor.execute("SELECT * FROM DB_STEAM WHERE GameID = ?", (game_id))
-    row = db.cursor.fetchone()  # Pega apenas um resultado
-
-    if row:
-        return game.Game(row[0], row[1], row[2], row[3], row[4])  # Retorna o objeto Game
-    else:
-        return None  # Retorna None se não encontrar o jogo
+def SELECT_BY_ID(gameid):
+    db.cursor.execute("SELECT * FROM STEAM WHERE GameID = ? ", (gameid,)).rowcount(4)
+    list = []
+    
+    for row in db.cursor.fetchall():
+        list.append()  
+    
+    
+    
